@@ -56,6 +56,7 @@ var b = a ?? 8 // Nil coalescig
 // Задать для кейсов названия “Black tea” и “Green tea”
 
 enum Tea: String {
+
     case green = "Green tea"
     case black = "Black tea"
     
@@ -73,8 +74,8 @@ enum Tea: String {
 
 // Создать переменную с типом созданного перечисления, а затем при помощи print вывести цвет чая
 
-var tea1: Tea = .green
-var tea2 = Tea.black 
+var tea1: Tea = .green // 1й способ
+var tea2 = Tea.black   // 2й способ
 
 print(tea1.returnColor())
 print(tea2.returnColor())
