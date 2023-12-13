@@ -68,13 +68,10 @@ print(b.sorted(by: <)) // [-20, -7, -4, 0, 0, 4, 5, 10, 15, 16, 25, 75]
 func myFunc(x: Int) -> [Int] {
     
     var arr: [Int] = []
-    
     var v = 1
     
     for _ in 1...x {
-        
         arr.append(v)
-        
         v = v * 2
     }
     
@@ -87,7 +84,6 @@ print(myFunc(x: 10)) // [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
 // Попробовал также решить через рекурсию:
 
 var arr: [Int] = []
-
 var a = 10
 
 func myFunc(i: Int) -> Void {
