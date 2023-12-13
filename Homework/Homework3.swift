@@ -36,29 +36,28 @@ for (i, v) in teaOrders.enumerated() {
 
 
 
-
 // 2. Есть массив [-4, 5, 10, nil, 4, nil, 25, 0, nil, 16, 75, -20, -7, 15, 0, nil]. Необходимо создать новый массив, который будет состоять из элементов старого, но не должно быть nil, не должно быть 0 и 4, а также массив должен быть отсортирован по возрастанию.
 
 var a: [Int?] = [-4, 5, 10, nil, 4, nil, 25, 0, nil, 16, 75, -20, -7, 15, 0, nil]
 
-//var aModified = a.compactMap { Int($0) } // Так выдаёт ошибку
+//var b = a.compactMap { Int($0) } // Так выдаёт ошибку
 
-var aModified = a.compactMap { $0 != nil ? Int($0!) : nil }.sorted(by: <)
+var b = a.compactMap { $0 != nil ? Int($0!) : nil }.sorted(by: <)
 
-print(aModified) // [-20, -7, -4, 0, 0, 4, 5, 10, 15, 16, 25, 75]
+print(b) // [-20, -7, -4, 0, 0, 4, 5, 10, 15, 16, 25, 75]
 
 
 // Другой способ:
 
-var aModified: [Int] = []
+var b: [Int] = []
 
 for el in a {
     if let v = el, v != 0, v != 4 {
-        aModified.append(v)
+        b.append(v)
     }
 }
 
-print(aModified.sorted(by: <)) // [-20, -7, -4, 0, 0, 4, 5, 10, 15, 16, 25, 75]
+print(b.sorted(by: <)) // [-20, -7, -4, 0, 0, 4, 5, 10, 15, 16, 25, 75]
 
 
 
@@ -102,4 +101,4 @@ func myFunc(i: Int) -> Void {
 
 myFunc(i: 1)
 
-print(arr) // [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+print(arr) // [1, 2, 4, 8, 16, 32, 64, 128, 256, 512] 
