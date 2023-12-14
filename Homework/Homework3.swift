@@ -40,11 +40,9 @@ for (i, v) in teaOrders.enumerated() {
 
 var a: [Int?] = [-4, 5, 10, nil, 4, nil, 25, 0, nil, 16, 75, -20, -7, 15, 0, nil]
 
-//var b = a.compactMap { Int($0) } // Так выдаёт ошибку
+var b = a.compactMap { $0 }.filter { $0 != 0 && $0 != 4 }.sorted(by: <)
 
-var b = a.compactMap { $0 != nil ? Int($0!) : nil }.sorted(by: <)
-
-print(b) // [-20, -7, -4, 0, 0, 4, 5, 10, 15, 16, 25, 75]
+print(b) // [-20, -7, -4, 5, 10, 15, 16, 25, 75]
 
 
 // Другой способ:
@@ -57,7 +55,7 @@ for el in a {
     }
 }
 
-print(b.sorted(by: <)) // [-20, -7, -4, 0, 0, 4, 5, 10, 15, 16, 25, 75]
+print(b.sorted(by: <)) // [-20, -7, -4, 5, 10, 15, 16, 25, 75]
 
 
 
