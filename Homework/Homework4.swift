@@ -6,6 +6,7 @@ struct Pizza {
     var type: PizzaType
     var cost: Int
     var thin: Bool // Тонкое тесто: true|false
+    var adds: [Add] // Добавки
 
     // Создать перечисление с видами пиццы (хотя бы 4 - 5 кейсов)
     enum PizzaType {
@@ -17,7 +18,7 @@ struct Pizza {
     }
         
     // Добавки
-    enum Additive {
+    enum Add {
         case pepperoni
         case tomatos
         case chees
@@ -52,14 +53,14 @@ class Pizzeria {
 
 // Создать экземпляр класса пиццерии и добавить в него несколько пицц
 
-let pepperoni = Pizza(type: .pepperoni, cost: 600, thin: true)
-let margarita = Pizza(type: .margarita, cost: 550, thin: false)
+let pepperoni = Pizza(type: .pepperoni, cost: 600, thin: true, adds: [.tomatos, .chees])
+let margarita = Pizza(type: .margarita, cost: 550, thin: false, adds: [.pepperoni])
 
 var pizzeria = Pizzeria(pizzas: [pepperoni, margarita])
 
 // Добавляем ещё пиццу
 
-let neapolitano = Pizza(type: .neapolitano, cost: 650, thin: true)
+let neapolitano = Pizza(type: .neapolitano, cost: 650, thin: true, adds: [.pepperoni, .chees])
 pizzeria.addPizza(pizza: neapolitano)
 
 
@@ -67,11 +68,11 @@ pizzeria.addPizza(pizza: neapolitano)
 var allPizzas = pizzeria.getAllPizzas();
 
 for pizza in allPizzas {
-    print("Тип пиццы: \(pizza.type), стоимость \(pizza.cost), тесто " + (pizza.thin ? "тонкое" : "толстое"))
+    print("Тип пиццы: \(pizza.type), стоимость \(pizza.cost), тесто " + (pizza.thin ? "тонкое" : "толстое") + ", добавки: \(pizza.adds.map { "\($0)" }.joined(separator: ", "))")
     /*
-    Тип пиццы: pepperoni, стоимость 600, тесто тонкое
-    Тип пиццы: margarita, стоимость 550, тесто толстое
-    Тип пиццы: neapolitano, стоимость 650, тесто тонкое
+    Тип пиццы: pepperoni, стоимость 600, тесто тонкое, добавки: tomatos, chees
+    Тип пиццы: margarita, стоимость 550, тесто толстое, добавки: pepperoni
+    Тип пиццы: neapolitano, ст�имость 650, тесто тонкое, добавки: pepperoni, chees
     */
 }
 
