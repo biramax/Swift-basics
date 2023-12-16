@@ -58,7 +58,7 @@ let margarita = Pizza(type: .margarita, cost: 550, thin: false, adds: [.pepperon
 
 var pizzeria = Pizzeria(pizzas: [pepperoni, margarita])
 
-// Добавляем ещё пиццу
+// Добавляем ещё одну пиццу через метод addPizza
 
 let neapolitano = Pizza(type: .neapolitano, cost: 650, thin: true, adds: [.pepperoni, .chees])
 pizzeria.addPizza(pizza: neapolitano)
@@ -72,7 +72,7 @@ for pizza in allPizzas {
     /*
     Тип пиццы: pepperoni, стоимость 600, тесто тонкое, добавки: tomatos, chees
     Тип пиццы: margarita, стоимость 550, тесто толстое, добавки: pepperoni
-    Тип пиццы: neapolitano, ст�имость 650, тесто тонкое, добавки: pepperoni, chees
+    Тип пиццы: neapolitano, стоимость 650, тесто тонкое, добавки: pepperoni, chees
     */
 }
 
