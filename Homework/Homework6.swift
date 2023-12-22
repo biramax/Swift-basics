@@ -253,3 +253,9 @@ pizzeria.printTables()
 // Столик 6: 4
 // Столик 7: 4
 // Столик 8: 4
+
+
+// Проверяем, хватает ли мест для гостей за первым столиком
+
+print(pizzeria.tables[0].enoughtNumSeats(numGuests: 5)) // false
+print(pizzeria.tables[0].enoughtNumSeats(numGuests: 4)) // true
